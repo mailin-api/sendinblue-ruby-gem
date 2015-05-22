@@ -32,7 +32,7 @@ Interacting with the API.
 Below sample is used to send mail from your application using SendinBlue API.
 
 ```ruby
-require 'Sendinblue'
+require 'sendinblue'
 m = Sendinblue::Mailin.new("https://api.sendinblue.com/v2.0","<your access key>")
 to = {'to@example.net'=>'to email'} #mandatory
 subject = 'Mon subject' #mandatory
