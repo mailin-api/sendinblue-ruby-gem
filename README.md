@@ -66,7 +66,7 @@ Sendinblue Ruby GEM has been upgraded to new version 2.2 with object-based wrapp
 If earlier you were using version 2.0, & now upgraded to version 2.2, then you may face error in APIs like, example for send_email() api
 
 ```ruby
-/var/lib/gems/2.x.x/gems/sendinblue-2.1/lib/sendinblue.rb:360:in `send_email': wrong number of arguments (10 for 1) (ArgumentError)
+/var/lib/gems/2.x.x/gems/sendinblue-2.2/lib/sendinblue.rb:360:in `send_email': wrong number of arguments (10 for 1) (ArgumentError)
   from yourTestFile.rb:<line_no>:in `<main>'
 ```
 
