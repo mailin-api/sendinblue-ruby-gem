@@ -63,14 +63,9 @@ puts result
 
 Sendinblue Ruby GEM has been upgraded to new version 2.2 with object-based wrapper & have new way of sending input parameters.
 
-If earlier you were using version 2.0, & now upgraded to version 2.2, then you may face error in APIs like, example for send_email() api
+If earlier you were using version 2.0, & now upgraded to version 2.2, then you may face **ArgumentError: wrong number of arguments** in APIs.
 
-```ruby
-/var/lib/gems/2.x.x/gems/sendinblue-2.2/lib/sendinblue.rb:360:in `send_email': wrong number of arguments (10 for 1) (ArgumentError)
-  from yourTestFile.rb:<line_no>:in `<main>'
-```
-
-In that case, it is highly recommended to update way of sending input parameters, then you may no longer face this issue.
+In that case, it is **highly recommended** to update way of sending input parameters, then you may no longer face this issue.
 Please refer new Ruby samples in [documentation website](https://apidocs.sendinblue.com).
 
 ## Support and Feedback
