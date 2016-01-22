@@ -61,9 +61,9 @@ puts result
 
 ##Recommendation:
 
-Sendinblue Ruby GEM has been upgraded to new version 2.2 with object-based wrapper & have new way of sending input parameters.
+Sendinblue Ruby GEM has been upgraded to new version 2.3 with object-based wrapper having new way of sending input parameters & return JSON Object in response.
 
-If earlier you were using version 2.0, & now upgraded to version 2.2, then you may face **ArgumentError: wrong number of arguments** in APIs.
+If earlier you were using version 2.0, & now upgraded to version 2.2 or higher, then you may face **ArgumentError: wrong number of arguments** in APIs.
 
 In that case, it is **highly recommended** to update way of sending input parameters, then you may no longer face this issue.
 Please refer new Ruby samples in [documentation website](https://apidocs.sendinblue.com).

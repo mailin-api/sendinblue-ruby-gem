@@ -23,7 +23,7 @@ module Sendinblue
 			else
 				response = HTTParty.delete(called_url,:body=>input, :headers => {"api-key"=>@api_key,"content-type"=>content_type})
 			end
-			return response.body
+			return JSON.parse(response.body)
 		end
 		def get(resource,input)
 			return do_request(resource,"GET",input)
