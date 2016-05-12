@@ -6,7 +6,7 @@ require 'sendinblue/version'
 Gem::Specification.new do |spec|
   spec.name          = "sendinblue"
   spec.version       = Sendinblue::VERSION
-  spec.date          = "2016-01-22"
+  spec.date          = "2016-05-12"
   spec.authors       = ["SendinBlue Developers"]
   spec.email         = ["contact@sendinblue.com"]
 

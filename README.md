@@ -31,9 +31,11 @@ Or install it yourself as:
 Interacting with the API.
 Below sample is used to send mail from your application using SendinBlue API.
 
+Our library supports a timeout value, default is 30 Secs, which you can pass as 3rd parameter in Mailin class Object.
+
 ```ruby
 require 'sendinblue'
-m = Sendinblue::Mailin.new("https://api.sendinblue.com/v2.0","your access key")
+m = Sendinblue::Mailin.new("https://api.sendinblue.com/v2.0","your access key",5)	#Optional parameter: Timeout in Secs
 data = { "to" => {"to@example.net"=>"to whom!"},
 "cc" => {"cc@example.net"=>"cc whom!"},
 "bcc" => {"bcc@example.net"=>"bcc whom!"},
@@ -61,7 +63,7 @@ puts result
 
 ##Recommendation:
 
-Sendinblue Ruby GEM has been upgraded to new version 2.3 with object-based wrapper having new way of sending input parameters & return JSON Object in response.
+Sendinblue Ruby GEM has been upgraded to new version 2.4 with object-based wrapper & have new way of sending input parameters & return JSON Object in response.
 
 If earlier you were using version 2.0, & now upgraded to version 2.2 or higher, then you may face **ArgumentError: wrong number of arguments** in APIs.
 

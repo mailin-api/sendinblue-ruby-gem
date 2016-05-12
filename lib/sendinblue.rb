@@ -6,22 +6,27 @@ module Sendinblue
 	class Mailin
 		@base_url = ""
 		@api_key = "Your access key"
-		def initialize(base_url,api_key)
+		def initialize(base_url,api_key,timeout=nil)
 			@base_url = base_url
 			@api_key = api_key
+			@timeout = timeout
 		end
 		def do_request(resource,method,input)
 			called_url = @base_url + "/" + resource
 			content_type = "application/json"
+			if @timeout != nil then @timeout = @timeout else @timeout = 30 end 	#default timeout: 30 secs
+			if(@timeout != nil && (@timeout <= 0 or @timeout > 60))
+				raise Exception.new("value not allowed for timeout")
+			end
 			case method
 			when "GET"
-				response = HTTParty.get(called_url,:body=>input, :headers => {"api-key"=>@api_key,"content-type"=>content_type})
+				response = HTTParty.get(called_url,:body=>input, :default_timeout=> @timeout, :headers => {"api-key"=>@api_key,"content-type"=>content_type})
 			when "POST"
-				response = HTTParty.post(called_url,:body=>input, :headers => {"api-key"=>@api_key,"content-type"=>content_type})
+				response = HTTParty.post(called_url,:body=>input, :default_timeout=> @timeout, :headers => {"api-key"=>@api_key,"content-type"=>content_type})
 			when "PUT"
-				response = HTTParty.put(called_url,:body=>input, :headers => {"api-key"=>@api_key,"content-type"=>content_type})
+				response = HTTParty.put(called_url,:body=>input, :default_timeout=> @timeout, :headers => {"api-key"=>@api_key,"content-type"=>content_type})
 			else
-				response = HTTParty.delete(called_url,:body=>input, :headers => {"api-key"=>@api_key,"content-type"=>content_type})
+				response = HTTParty.delete(called_url,:body=>input, :default_timeout=> @timeout, :headers => {"api-key"=>@api_key,"content-type"=>content_type})
 			end
 			return JSON.parse(response.body)
 		end
