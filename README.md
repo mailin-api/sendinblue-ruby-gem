@@ -61,7 +61,7 @@ result = m.send_email(data)
 puts result
 ```
 
-##Recommendation:
+## Recommendation:
 
 Sendinblue Ruby GEM has been upgraded to new version 2.4 with object-based wrapper & have new way of sending input parameters & return JSON Object in response.
 
